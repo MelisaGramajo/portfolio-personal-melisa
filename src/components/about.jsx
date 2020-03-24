@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Experience from './Experience';
 
 export default class About extends Component {
   render() {
+      const{description,experiences}= this.props;
+     const newesperiences= experiences.map(experience => <Experience info={experience} key={experience.name} />);
     return (
       <div>
         <section className="colorlib-about" data-section="about">
@@ -13,8 +16,7 @@ export default class About extends Component {
                     <div className="about-desc">
                     <span className="heading-meta">Acerca de mi</span>
                     <h2 className="colorlib-heading">¿Quien soy?</h2>
-                    <p className="tamañoparrafo">Egresada de la carrera de Ingeniería en Sistemas de Información; actualmente desempeñando el rol de Developer. 
-                    Soy una persona comprometida, tengo ideas innovadoras, me gustan los desafíos y nuevos proyectos que me pudieran proponer; así lograr crecer personal y profesionalmente. </p>
+                    <p className="tamañoparrafo">{description} </p>
                     </div>
                 </div>
                 </div>
@@ -35,11 +37,7 @@ export default class About extends Component {
                 <span className="icon">
                     <i className="icon-device-desktop" />
                 </span>
-                <div className="desc">
-                    <h3>Web Development</h3>
-                    <h3>(03/20 - Actualidad)</h3>
-                    <p>Experiencia en desarrollo de aplicaciones web usando JavaScript, React, HTML, CSS</p>
-                </div>
+                {newesperiences[0]}
                 </div>
             </div>
             <div className="col-md-4 text-center animate-box">
@@ -47,12 +45,8 @@ export default class About extends Component {
                 <span className="icon">
                     <i className="icon-phone3" />
                 </span>
-                <div className="desc">
-                    <h3>QA Engineer</h3>
-                    <h3>(05/19 - 02/20)</h3>
-                    <p>Experiencia en la elaboración y ejecución de pruebas funcionales y automatizadas</p>
-                    <p></p>
-                </div>
+                {newesperiences[1]}
+               
                 </div>
             </div>
             <div className="col-md-4 text-center animate-box">
@@ -60,11 +54,7 @@ export default class About extends Component {
                 <span className="icon">
                     <i className="icon-bulb" />
                 </span>
-                <div className="desc">
-                    <h3>Research assistant</h3>
-                    <h3>(02/18 - Actualidad)</h3>
-                    <p>Investigación, analizando nuevas formas de aprendizaje aplicando mundos virtuales</p>
-                </div>
+                {newesperiences[2]}
                 </div>
             </div>
             </div>
