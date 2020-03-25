@@ -4,7 +4,7 @@ import Experience from './Experience';
 export default class About extends Component {
   render() {
       const{description,experiences}= this.props;
-     const newesperiences= experiences.map(experience => <Experience info={experience} key={experience.name} />);
+   const newesperiences= experiences.map(experience => <Experience info={experience} key={experience.name} />);
     return (
       <div>
         <section className="colorlib-about" data-section="about">
@@ -37,7 +37,7 @@ export default class About extends Component {
                 <span className="icon">
                     <i className="icon-device-desktop" />
                 </span>
-                {newesperiences[0]}
+               {newesperiences[0]}
                 </div>
             </div>
             <div className="col-md-4 text-center animate-box">
